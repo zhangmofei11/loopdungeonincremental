@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loop Dungeon Incremental - Game Wiki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dungeon: '#0a0a0f',
+                        dungeonLight: '#1a1a2e',
+                        neonGreen: '#00ff88',
+                        neonPurple: '#9933ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body { font-family: 'Press Start 2P', cursive; background-color: #0a0a0f; }
+        .pixel-text { text-shadow: 2px 2px 0 #00ff88; }
+        .pixel-border { box-shadow: 0 0 10px #9933ff, inset 0 0 10px rgba(153, 51, 255, 0.3); }
+        .neon-glow { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-dungeonLight border-b-2 border-neonPurple sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-wrap items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-neonGreen neon-glow mb-2 md:mb-0">Loop Dungeon</a>
+                <div class="flex flex-wrap gap-4 md:gap-8">
+                    <a href="index.html" class="text-neonGreen hover:text-white transition">Home</a>
+                    <a href="mechanics.html" class="text-gray-400 hover:text-neonPurple transition">Mechanics</a>
+                    <a href="walkthrough.html" class="text-gray-400 hover:text-neonPurple transition">Walkthrough</a>
+                    <a href="upgrades.html" class="text-gray-400 hover:text-neonPurple transition">Upgrades</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative py-20 px-4 overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-neonPurple/20 to-transparent"></div>
+        <div class="container mx-auto text-center relative z-10">
+            <h1 class="text-3xl md:text-5xl font-bold text-neonGreen mb-6 pixel-text">Loop Dungeon Incremental</h1>
+            <p class="text-sm md:text-lg text-gray-300 mb-8 max-w-2xl mx-auto">
+                A roguelike incremental game where you descend through infinite dungeon loops, collecting loot and growing stronger with each run.
+            </p>
+            <div class="flex flex-wrap justify-center gap-4">
+                <span class="px-4 py-2 bg-dungeonLight pixel-border rounded text-xs md:text-sm text-neonPurple">Roguelike</span>
+                <span class="px-4 py-2 bg-dungeonLight pixel-border rounded text-xs md:text-sm text-neonGreen">Incremental</span>
+                <span class="px-4 py-2 bg-dungeonLight pixel-border rounded text-xs md:text-sm text-gray-300">Pixel Art</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Game Overview -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Game Overview</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">What is Loop Dungeon?</h3>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed">
+                        Loop Dungeon Incremental is an addictive blend of roguelike dungeon crawling and idle incremental mechanics. Each loop through the dungeon brings new challenges, better loot, and permanent upgrades that carry over between runs.
+                    </p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Core Loop</h3>
+                    <ul class="text-gray-300 text-xs md:text-sm space-y-2">
+                        <li>1. Enter the dungeon</li>
+                        <li>2. Fight monsters and collect gold</li>
+                        <li>3. Find equipment and items</li>
+                        <li>4. Die or escape to upgrade</li>
+                        <li>5. Repeat with permanent boosts</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Key Features</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">🌀</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Infinite Loops</h3>
+                    <p class="text-gray-400 text-xs">Endless dungeon floors with increasing difficulty and better rewards</p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">⚔️</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Roguelike Death</h3>
+                    <p class="text-gray-400 text-xs">Permadeath with permanent upgrades that persist between runs</p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">💀</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Monster Variety</h3>
+                    <p class="text-gray-400 text-xs">Dozens of unique enemies with different attack patterns</p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">📦</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Loot System</h3>
+                    <p class="text-gray-400 text-xs">Rare, epic, and legendary equipment drops</p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">⬆️</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Upgrade Trees</h3>
+                    <p class="text-gray-400 text-xs">Multiple skill trees to customize your playstyle</p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border text-center">
+                    <div class="text-4xl mb-4">🏆</div>
+                    <h3 class="text-lg font-bold text-neonGreen mb-2">Achievements</h3>
+                    <p class="text-gray-400 text-xs">Unlock rewards and track your progress</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Getting Started</h2>
+            <div class="bg-dungeonLight p-6 pixel-border">
+                <ol class="space-y-4 text-gray-300 text-xs md:text-sm">
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">1.</span>
+                        <span><strong class="text-white">Start a new run</strong> - Click "Enter Dungeon" to begin your first loop</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">2.</span>
+                        <span><strong class="text-white">Move through rooms</strong> - Use arrow keys or WASD to navigate the dungeon</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">3.</span>
+                        <span><strong class="text-white">Fight monsters</strong> - Auto-attack when adjacent, collect gold from fallen enemies</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">4.</span>
+                        <span><strong class="text-white">Find equipment</strong> - Loot chests and defeated enemies for gear</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">5.</span>
+                        <span><strong class="text-white">Upgrade between runs</strong> - Spend gold on permanent upgrades at the shop</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-neonGreen font-bold min-w-[24px]">6.</span>
+                        <span><strong class="text-white">Die and repeat</strong> - Each death makes you stronger for the next run</span>
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <!-- Quick Tips -->
+        <section>
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Quick Tips</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <ul class="space-y-3 text-gray-300 text-xs md:text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonGreen">►</span>
+                        Prioritize health upgrades early - survival is key
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonGreen">►</span>
+                        Don't spend all gold mid-run - escape with some for upgrades
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonGreen">►</span>
+                        Watch enemy attack patterns - timing matters
+                    </li>
+                </ul>
+                <ul class="space-y-3 text-gray-300 text-xs md:text-sm">
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonPurple">►</span>
+                        Save rare items for deeper floors
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonPurple">►</span>
+                        Focus on one upgrade tree at a time
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-neonPurple">►</span>
+                        Higher loops = exponentially better rewards
+                    </li>
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dungeonLight border-t-2 border-neonPurple/50 mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p class="text-gray-500 text-xs">Loop Dungeon Incremental Wiki - Fan-made guide</p>
+            <p class="text-gray-600 text-xs mt-2">Not affiliated with the game developers</p>
+        </div>
+    </footer>
+</body>
+</html>

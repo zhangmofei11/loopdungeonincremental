@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Mechanics - Loop Dungeon Incremental Wiki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dungeon: '#0a0a0f',
+                        dungeonLight: '#1a1a2e',
+                        neonGreen: '#00ff88',
+                        neonPurple: '#9933ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body { font-family: 'Press Start 2P', cursive; background-color: #0a0a0f; }
+        .pixel-text { text-shadow: 2px 2px 0 #00ff88; }
+        .pixel-border { box-shadow: 0 0 10px #9933ff, inset 0 0 10px rgba(153, 51, 255, 0.3); }
+        .neon-glow { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-dungeonLight border-b-2 border-neonPurple sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-wrap items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-neonGreen neon-glow mb-2 md:mb-0">Loop Dungeon</a>
+                <div class="flex flex-wrap gap-4 md:gap-8">
+                    <a href="index.html" class="text-gray-400 hover:text-neonPurple transition">Home</a>
+                    <a href="mechanics.html" class="text-neonGreen hover:text-white transition">Mechanics</a>
+                    <a href="walkthrough.html" class="text-gray-400 hover:text-neonPurple transition">Walkthrough</a>
+                    <a href="upgrades.html" class="text-gray-400 hover:text-neonPurple transition">Upgrades</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-12 px-4 bg-gradient-to-b from-neonPurple/20 to-transparent">
+        <div class="container mx-auto text-center">
+            <h1 class="text-2xl md:text-4xl font-bold text-neonGreen mb-4">Game Mechanics</h1>
+            <p class="text-gray-400 text-xs md:text-sm">Understanding the core systems that drive Loop Dungeon</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Loop System -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">The Loop System</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">How Loops Work</h3>
+                    <p class="text-gray-300 text-xs md:text-sm leading-relaxed mb-4">
+                        Each run through the dungeon is called a "Loop." When you die, you restart from Floor 1 but retain all permanent upgrades purchased with gold.
+                    </p>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Loop 1 starts at Floor 1</li>
+                        <li>• Each subsequent loop starts at higher floors</li>
+                        <li>• Gold earned scales with loop number</li>
+                        <li>• Rare drops improve on later loops</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Loop Scaling</h3>
+                    <div class="space-y-4 text-xs">
+                        <div class="flex justify-between text-gray-300">
+                            <span>Monster HP:</span>
+                            <span class="text-neonGreen">+10% per floor</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span>Gold Drop:</span>
+                            <span class="text-neonGreen">+15% per floor</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span>XP Gain:</span>
+                            <span class="text-neonGreen">+5% per floor</span>
+                        </div>
+                        <div class="flex justify-between text-gray-300">
+                            <span>Drop Quality:</span>
+                            <span class="text-neonPurple">+2% rare per floor</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Combat System -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Combat System</h2>
+            <div class="bg-dungeonLight p-6 pixel-border mb-6">
+                <h3 class="text-lg font-bold text-neonGreen mb-4">Attack Mechanics</h3>
+                <div class="grid md:grid-cols-3 gap-6 text-xs md:text-sm">
+                    <div class="text-center p-4 bg-dungeon rounded">
+                        <div class="text-3xl mb-2">⚔️</div>
+                        <p class="text-gray-300">Melee attacks hit adjacent enemies automatically</p>
+                    </div>
+                    <div class="text-center p-4 bg-dungeon rounded">
+                        <div class="text-3xl mb-2">🏹</div>
+                        <p class="text-gray-300">Ranged attacks strike enemies within 3 tiles</p>
+                    </div>
+                    <div class="text-center p-4 bg-dungeon rounded">
+                        <div class="text-3xl mb-2">🛡️</div>
+                        <p class="text-gray-300">Block chance reduces incoming damage by percentage</p>
+                    </div>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonPurple mb-3">Damage Calculation</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Final Damage = (Base Damage + Equipment Bonus) × (1 + Strength%/100) × (1 - Enemy Armor%)
+                    </p>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonPurple mb-3">Critical Hits</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed">
+                        Base crit chance: 5%. Each point of Luck adds +0.5% crit chance. Critical hits deal 2× damage.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Progression System -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Progression System</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Temporary Stats</h3>
+                    <p class="text-gray-300 text-xs mb-4">Reset each run:</p>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Current HP / Max HP</li>
+                        <li>• Floor reached</li>
+                        <li>• Gold carried</li>
+                        <li>• Equipment & inventory</li>
+                        <li>• Consumable items</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Permanent Stats</h3>
+                    <p class="text-gray-300 text-xs mb-4">Persist through death:</p>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Total gold in bank</li>
+                        <li>• Upgrade levels purchased</li>
+                        <li>• Unlocked abilities</li>
+                        <li>• Achievement progress</li>
+                        <li>• Best floor record</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Upgrade Trees -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Upgrade Trees</h2>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonGreen mb-3">⚔️ Warrior</h3>
+                    <ul class="text-gray-400 text-xs space-y-1">
+                        <li>• Strength +2</li>
+                        <li>• Max HP +10</li>
+                        <li>• Attack Speed +5%</li>
+                        <li>• Armor +3</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonPurple mb-3">🏹 Ranger</h3>
+                    <ul class="text-gray-400 text-xs space-y-1">
+                        <li>• Dexterity +2</li>
+                        <li>• Crit Chance +2%</li>
+                        <li>• Range +1</li>
+                        <li>• Dodge +3%</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-gray-300 mb-3">✨ Mage</h3>
+                    <ul class="text-gray-400 text-xs space-y-1">
+                        <li>• Intelligence +2</li>
+                        <li>• Spell Power +5</li>
+                        <li>• Mana Regen +1</li>
+                        <li>• Item Discovery +3%</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Room Types -->
+        <section>
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Dungeon Room Types</h2>
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">👹</div>
+                    <h4 class="text-neonGreen text-xs mb-1">Monster Room</h4>
+                    <p class="text-gray-500 text-xs">Fight for gold</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">📦</div>
+                    <h4 class="text-neonGreen text-xs mb-1">Chest Room</h4>
+                    <p class="text-gray-500 text-xs">Loot and items</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">💰</div>
+                    <h4 class="text-neonGreen text-xs mb-1">Shop Room</h4>
+                    <p class="text-gray-500 text-xs">Buy mid-run gear</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">🪑</div>
+                    <h4 class="text-neonGreen text-xs mb-1">Rest Room</h4>
+                    <p class="text-gray-500 text-xs">Heal 50% HP</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">⬆️</div>
+                    <h4 class="text-neonPurple text-xs mb-1">Stairs Up</h4>
+                    <p class="text-gray-500 text-xs">Return to town</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">⬇️</div>
+                    <h4 class="text-neonPurple text-xs mb-1">Stairs Down</h4>
+                    <p class="text-gray-500 text-xs">Next floor</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">❓</div>
+                    <h4 class="text-gray-300 text-xs mb-1">Mystery Room</h4>
+                    <p class="text-gray-500 text-xs">Random event</p>
+                </div>
+                <div class="bg-dungeonLight p-4 pixel-border text-center">
+                    <div class="text-2xl mb-2">💀</div>
+                    <h4 class="text-gray-300 text-xs mb-1">Boss Room</h4>
+                    <p class="text-gray-500 text-xs">Every 10 floors</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-dungeonLight border-t-2 border-neonPurple/50 mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p class="text-gray-500 text-xs">Loop Dungeon Incremental Wiki - Fan-made guide</p>
+            <p class="text-gray-600 text-xs mt-2">Not affiliated with the game developers</p>
+        </div>
+    </footer>
+</body>
+</html>
