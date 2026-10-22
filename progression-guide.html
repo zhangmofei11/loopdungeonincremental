@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Progression Guide - Loop Dungeon Incremental Wiki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dungeon: '#0a0a0f',
+                        dungeonLight: '#1a1a2e',
+                        neonGreen: '#00ff88',
+                        neonPurple: '#9933ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-22DX454TY8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-22DX454TY8');
+    </script>
+    <meta name="description" content="A stage-by-stage Loop Dungeon Incremental progression guide covering your first ten loops, bank targets, upgrade order and when to reset for profit.">
+    <meta name="keywords" content="Loop Dungeon Incremental, progression guide, beginner guide, meta progression, prestige, gold bank, leveling guide, milestones, wiki">
+    <link rel="canonical" href="https://loopdungeonincremental.site/progression-guide.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "WebSite", "@id": "https://loopdungeonincremental.site/#website", "name": "Loop Dungeon Incremental", "url": "https://loopdungeonincremental.site/", "inLanguage": "en" },
+        { "@type": "WebPage", "@id": "https://loopdungeonincremental.site/#webpage", "url": "https://loopdungeonincremental.site/progression-guide.html", "name": "Progression Guide - Loop Dungeon Incremental Wiki", "description": "A stage-by-stage Loop Dungeon Incremental progression guide covering your first ten loops, bank targets, upgrade order and when to reset for profit.", "isPartOf": { "@id": "https://loopdungeonincremental.site/#website" }, "breadcrumb": { "@id": "https://loopdungeonincremental.site/#breadcrumb" }, "inLanguage": "en" },
+        { "@type": "BreadcrumbList", "@id": "https://loopdungeonincremental.site/#breadcrumb", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopdungeonincremental.site/" } ] }
+      ]
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body { font-family: 'Press Start 2P', cursive; background-color: #0a0a0f; }
+        .pixel-text { text-shadow: 2px 2px 0 #00ff88; }
+        .pixel-border { box-shadow: 0 0 10px #9933ff, inset 0 0 10px rgba(153, 51, 255, 0.3); }
+        .neon-glow { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-dungeonLight border-b-2 border-neonPurple sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-wrap items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-neonGreen neon-glow mb-2 md:mb-0">Loop Dungeon</a>
+                <div class="flex flex-wrap gap-4 md:gap-8">
+                    <a href="index.html" class="text-gray-400 hover:text-neonPurple transition">Home</a>
+                    <a href="mechanics.html" class="text-gray-400 hover:text-neonPurple transition">Mechanics</a>
+                    <a href="walkthrough.html" class="text-gray-400 hover:text-neonPurple transition">Walkthrough</a>
+                    <a href="upgrades.html" class="text-gray-400 hover:text-neonPurple transition">Upgrades</a>
+                    <a href="tips.html" class="text-gray-400 hover:text-neonPurple transition">Tips</a>
+                    <a href="progression-guide.html" class="text-neonGreen hover:text-white transition">Progression</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-12 px-4 bg-gradient-to-b from-neonPurple/20 to-transparent">
+        <div class="container mx-auto text-center">
+            <h1 class="text-2xl md:text-4xl font-bold text-neonGreen mb-4">Progression Guide</h1>
+            <p class="text-gray-400 text-xs md:text-sm">From your first death to the floor 50 boss, one stage at a time</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- What Persists -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">What Survives a Reset</h2>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                Dying in Loop Dungeon Incremental is not a wipe. It is a transfer. Everything you earn in a run is spent, but everything you spend in the shop is permanent, and later loops hand you a better starting position than the one you had. Progression is therefore a ladder of small permanent advantages stacked on top of each other, and the order you climb it in matters more than the speed.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Permanent After Death</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Gold sitting in the bank</li>
+                        <li>• Every upgrade level you paid for</li>
+                        <li>• Unlocked abilities and tree slots</li>
+                        <li>• Achievement progress and best floor record</li>
+                        <li>• The higher floor your next loop starts on</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonPurple mb-4">Gone After Death</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Gold carried in your pocket</li>
+                        <li>• All equipment and inventory</li>
+                        <li>• Consumables and potions</li>
+                        <li>• Current and max HP for the run</li>
+                        <li>• Floor-by-floor progress inside the loop</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stages -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Stage by Stage</h2>
+            <div class="space-y-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Stage 1 - Loops 1 to 5: Survive</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        The first five loops are about learning the damage rules, not about depth. Your goal is to reach the first boss on Floor 5 or Floor 10 with enough health to survive a mistake, and to bank roughly 500 gold across the stage.
+                    </p>
+                    <ul class="text-gray-300 text-xs space-y-2">
+                        <li>• Put every gold into Vitality and Strength first</li>
+                        <li>• Take the stairs up whenever a run turns bad; a banked 100g is worth more than a lost floor 8</li>
+                        <li>• Do not chase Rare drops yet, the drop quality is still too low to matter</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Stage 2 - Loops 6 to 10: Second Tree</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Loop 10 unlocks the second upgrade tree, and it is the single biggest power spike in the early game. From here the floors stop being walls and start being a curve. Bank target rises to 1,500 gold, and you should be able to clear a floor in one or two fights instead of a long attrition battle.
+                    </p>
+                    <ul class="text-gray-300 text-xs space-y-2">
+                        <li>• Pick the second tree to match your first: Strength pairs with Vitality, Dexterity with Luck</li>
+                        <li>• Add Toughness once you can kill a floor 15 enemy without taking damage</li>
+                        <li>• Now the mini-boss every ten floors becomes a genuine goal instead of a wall</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonPurple mb-4">Stage 3 - Loops 11 to 25: Rare Access</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Rare equipment starts appearing around Floor 25, and Rare drops carry roughly 50% bonus stats. This is where a build identity pays off: a Ranger that has stacked Dexterity and Luck suddenly gets a Rare bow that doubles its damage, while a Warrior gets a Rare plate that makes the same floors trivial.
+                    </p>
+                    <ul class="text-gray-300 text-xs space-y-2">
+                        <li>• Bank target: 4,000 gold, and start keeping Rare items instead of selling them</li>
+                        <li>• Add 5 levels of Luck to hold the line while you push toward Floor 25</li>
+                        <li>• Swap your gear on every Rare drop, even if the item is a side grade, because the stat budget is bigger</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonPurple mb-4">Stage 4 - Loops 26 to 50: The Floor 50 Boss</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        Floor 50 holds the first major boss, with roughly ten times normal monster health, multiple attack phases, and a guaranteed Epic drop. Take the preparation checklist seriously and do not attempt it on a run where you had to fight through the floor at low health. You want 2,000 or more HP and a damage number around 50 or higher before you try.
+                    </p>
+                    <ul class="text-gray-300 text-xs space-y-2">
+                        <li>• Bank target: 10,000 gold, since the boss should fund your next several loops</li>
+                        <li>• Add Toughness and Discovery in 5 level chunks rather than pouring everything into damage</li>
+                        <li>• If you die to the boss twice in a row, farm the two floors below it for a run instead of retrying immediately</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-gray-300 mb-4">Stage 5 - Loop 50 and Beyond: Endgame</h3>
+                    <p class="text-gray-400 text-xs leading-relaxed mb-4">
+                        At Loop 100 the endgame content unlocks, and Epic items are common enough that build polish matters more than raw stat totals. Your upgrades are deep enough that a new player is still climbing while you are farming a floor that no longer threatens you. At this point, play for records and achievements, and let the loops stack naturally.
+                    </p>
+                    <ul class="text-gray-300 text-xs space-y-2">
+                        <li>• Spread a little into Discovery, Wisdom and Mana Flow, which were dead stats before</li>
+                        <li>• Chase the achievements; they are permanent progress like everything else in the bank</li>
+                        <li>• Re-farm the old floors 20 to 30 for gold while your damage outpaces their difficulty</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Priority Order -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Resource Priority Order</h2>
+            <div class="bg-dungeonLight p-6 pixel-border">
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                    When gold is tight, there is a correct order to spend it in. This is the order that works for almost every build in the first fifty loops, and it is worth following even if your instinct says otherwise.
+                </p>
+                <div class="space-y-4 text-xs">
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonGreen text-dungeon px-3 py-1 font-bold min-w-[80px] text-center">First</span>
+                        <p class="text-gray-300">Vitality. No amount of damage helps if a floor 8 enemy ends the run.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonGreen text-dungeon px-3 py-1 font-bold min-w-[80px] text-center">Second</span>
+                        <p class="text-gray-300">Your main damage stat. Enough of it to two-shot a standard monster, and never more than that.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonPurple text-white px-3 py-1 font-bold min-w-[80px] text-center">Third</span>
+                        <p class="text-gray-300">Toughness, to soften the hits you cannot avoid from ranged enemies and bosses.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonPurple text-white px-3 py-1 font-bold min-w-[80px] text-center">Fourth</span>
+                        <p class="text-gray-300">Luck or Dexterity, depending on whether you want faster kills or bigger ones.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-gray-500 text-white px-3 py-1 font-bold min-w-[80px] text-center">Last</span>
+                        <p class="text-gray-300">Discovery, Wisdom and Mana Flow. They scale your ceiling, not your survival.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reset Timing -->
+        <section>
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">When to Reset, When to Push</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonGreen mb-3">Reset and Bank</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Health is under 40% with no healing item left</li>
+                        <li>• You already have enough gold for the upgrade you were saving for</li>
+                        <li>• The next floor is two difficulty steps above where you are comfortable</li>
+                        <li>• You have been pushing the same wall for three runs with no progress</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonPurple mb-3">Push Deeper</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• You cleared the previous floor without dropping below 80% HP</li>
+                        <li>• Your damage one-shots the enemy type you fought last run</li>
+                        <li>• The next milestone gear tier is on this floor band</li>
+                        <li>• Every extra floor multiplies the gold you bank on the way out</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Adsterra Ads -->
+    <script async="async" data-cfasync="false" src="https://bauval.org/21/330d36ae71eb442bbcc6ce59f1b620a6"></script>
+    <div id="container-330d36ae71eb442bbcc6ce59f1b620a6"></div>
+
+    <script data-cfasync="false" src="https://bauval.org/14/a3c5da0977fc52db8162edba78da0dc8"></script>
+
+    <script>
+      atOptions = {
+        'key' : '9be09c49ef205bdebda74393ec15512b',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/9be09c49ef205bdebda74393ec15512b"></script>
+
+    <!-- Footer -->
+    <footer class="bg-dungeonLight border-t-2 border-neonPurple/50 mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p class="text-gray-500 text-xs">Loop Dungeon Incremental Wiki - Fan-made guide</p>
+            <p class="text-gray-600 text-xs mt-2">Not affiliated with the game developers</p>
+        </div>
+
+    <!-- Related Articles -->
+    <section class="max-w-4xl mx-auto py-8 px-4 border-t border-amber-900">
+        <h3 class="text-xl font-bold mb-4 text-white">You Might Also Like</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+        <a href="index.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Loop Dungeon Incremental - Game Wiki</span>
+        </a>
+        <a href="upgrades.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Upgrade Guide - Loop Dungeon Incremental Wiki</span>
+        </a>
+        <a href="tips.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Tips &amp; Tricks - Loop Dungeon Incremental Wiki</span>
+        </a>
+        </div>
+    </section>
+</footer>
+</body>
+</html>

@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tips & Tricks - Loop Dungeon Incremental Wiki</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dungeon: '#0a0a0f',
+                        dungeonLight: '#1a1a2e',
+                        neonGreen: '#00ff88',
+                        neonPurple: '#9933ff',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-22DX454TY8"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-22DX454TY8');
+    </script>
+    <meta name="description" content="Actionable Loop Dungeon Incremental tips: room routing order, gold banking rules, floor farming bands, boss prep checklists and death post-mortems.">
+    <meta name="keywords" content="Loop Dungeon Incremental, tips and tricks, room routing, gold farming, boss preparation, death post-mortem, kiting, wiki">
+    <link rel="canonical" href="https://loopdungeonincremental.site/tips.html">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        { "@type": "WebSite", "@id": "https://loopdungeonincremental.site/#website", "name": "Loop Dungeon Incremental", "url": "https://loopdungeonincremental.site/", "inLanguage": "en" },
+        { "@type": "WebPage", "@id": "https://loopdungeonincremental.site/#webpage", "url": "https://loopdungeonincremental.site/tips.html", "name": "Tips & Tricks - Loop Dungeon Incremental Wiki", "description": "Actionable Loop Dungeon Incremental tips: room routing order, gold banking rules, floor farming bands, boss prep checklists and death post-mortems.", "isPartOf": { "@id": "https://loopdungeonincremental.site/#website" }, "breadcrumb": { "@id": "https://loopdungeonincremental.site/#breadcrumb" }, "inLanguage": "en" },
+        { "@type": "BreadcrumbList", "@id": "https://loopdungeonincremental.site/#breadcrumb", "itemListElement": [ { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://loopdungeonincremental.site/" } ] }
+      ]
+    }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body { font-family: 'Press Start 2P', cursive; background-color: #0a0a0f; }
+        .pixel-text { text-shadow: 2px 2px 0 #00ff88; }
+        .pixel-border { box-shadow: 0 0 10px #9933ff, inset 0 0 10px rgba(153, 51, 255, 0.3); }
+        .neon-glow { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
+    </style>
+</head>
+<body class="min-h-screen text-gray-200">
+    <!-- Navigation -->
+    <nav class="bg-dungeonLight border-b-2 border-neonPurple sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex flex-wrap items-center justify-between">
+                <a href="index.html" class="text-xl font-bold text-neonGreen neon-glow mb-2 md:mb-0">Loop Dungeon</a>
+                <div class="flex flex-wrap gap-4 md:gap-8">
+                    <a href="index.html" class="text-gray-400 hover:text-neonPurple transition">Home</a>
+                    <a href="mechanics.html" class="text-gray-400 hover:text-neonPurple transition">Mechanics</a>
+                    <a href="walkthrough.html" class="text-gray-400 hover:text-neonPurple transition">Walkthrough</a>
+                    <a href="upgrades.html" class="text-gray-400 hover:text-neonPurple transition">Upgrades</a>
+                    <a href="tips.html" class="text-neonGreen hover:text-white transition">Tips</a>
+                    <a href="progression-guide.html" class="text-gray-400 hover:text-neonPurple transition">Progression</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header -->
+    <header class="py-12 px-4 bg-gradient-to-b from-neonPurple/20 to-transparent">
+        <div class="container mx-auto text-center">
+            <h1 class="text-2xl md:text-4xl font-bold text-neonGreen mb-4">Tips &amp; Tricks</h1>
+            <p class="text-gray-400 text-xs md:text-sm">Small habits that turn dead runs into deep ones</p>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-12">
+        <!-- Room Routing -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Room Routing: What to Open First</h2>
+            <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                Every floor gives you a handful of rooms and one set of stairs down. The order you open them in decides whether you clear the floor at full health or crawl into the next one at 20%. Find the stairs down first, every time. Knowing where the exit is turns a panic scramble into a short route, and it costs only a few tiles of walking.
+            </p>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Open in This Order</h3>
+                    <ul class="text-gray-300 text-xs space-y-3">
+                        <li><span class="text-neonGreen">1.</span> Stairs down - locate it, do not use it</li>
+                        <li><span class="text-neonGreen">2.</span> Rest room - heal before you fight anything</li>
+                        <li><span class="text-neonGreen">3.</span> Chest room - free loot, costs only time</li>
+                        <li><span class="text-neonGreen">4.</span> Monster rooms - one at a time</li>
+                        <li><span class="text-neonGreen">5.</span> Shop room - last, if you can afford the trip back</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonPurple mb-4">Why Not the Other Way Round</h3>
+                    <ul class="text-gray-300 text-xs space-y-3">
+                        <li><span class="text-neonPurple">►</span> Chests before rest: you fight at reduced health for free gear</li>
+                        <li><span class="text-neonPurple">►</span> Shop before chests: gold spent in-run is gold lost on death</li>
+                        <li><span class="text-neonPurple">►</span> Monsters first: you enter a fight with unknown health and no route out</li>
+                        <li><span class="text-neonPurple">►</span> Ignoring the shop: a full heal item is worth more than a Common drop</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gold Discipline -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Gold Discipline</h2>
+            <div class="bg-dungeonLight p-6 pixel-border mb-6">
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed">
+                    Gold drop climbs about 15% per floor while monster HP climbs about 10% per floor, so every floor you survive is more profitable than the last. The catch is that gold carried into a run is lost when you die, while gold in the bank is permanent. Treat pocket gold as a resource you are spending, not one you are collecting.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonGreen mb-3">Bank Early, Bank Often</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Take the stairs up when a run goes badly, not only when it goes well</li>
+                        <li>• A 30% depth run that banks 400g beats a floor 30 death at zero</li>
+                        <li>• Spending the reserve in the shop is the only real way to lose banked gold</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-neonPurple mb-3">Sell Without Thinking</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Common items sell for a few gold each - bulk sell them</li>
+                        <li>• Keep Rare and above for stats, not for their sell value</li>
+                        <li>• Equipment resets with the run, so a mid-run legendary is not a real gain</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-md font-bold text-gray-300 mb-3">Spend Only in Town</h3>
+                    <ul class="text-gray-400 text-xs space-y-2">
+                        <li>• Permanent upgrades are bought between loops, never mid-run</li>
+                        <li>• Mid-run gold has no home unless the shop sells consumables</li>
+                        <li>• If the shop has a health item and you are above 70% HP, skip it</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Farming -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Farming a Floor Band</h2>
+            <div class="bg-dungeonLight p-6 pixel-border">
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                    When you cannot push one more floor, stop trying to push and farm the two floors just below your wall. If Floor 20 is where you die every time, then Floors 18 and 19 are the sweet spot: the enemies are close to your power level, so you actually win the fights, but the gold and XP multipliers are already high enough to matter. Because later loops start on a higher floor, the band moves with you, and the same two floors become a stronger farm each time you return to them.
+                </p>
+                <div class="space-y-4 text-xs">
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="md:w-32 text-neonGreen">Band choice</div>
+                        <div class="flex-1 text-gray-400">Two floors below your death floor. One is too shallow and wastes the gold multiplier.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="md:w-32 text-neonGreen">Target</div>
+                        <div class="flex-1 text-gray-400">Clear the band quickly, then bank the gold rather than pushing for a record.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="md:w-32 text-neonGreen">Exit rule</div>
+                        <div class="flex-1 text-gray-400">If a fight drops you under half health, stop and take the stairs up. Do not push the streak.</div>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4">
+                        <div class="md:w-32 text-neonPurple">Upgrade</div>
+                        <div class="flex-1 text-gray-400">Spend the farmed gold on survival, then swap back to damage once a clear run is easy.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enemy Handling -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Handling Enemies</h2>
+            <div class="grid md:grid-cols-2 gap-6">
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonGreen mb-4">Kiting and Pulling</h3>
+                    <ul class="text-gray-300 text-xs space-y-3">
+                        <li>Melee attacks only trigger when you are adjacent, so stepping around a monster is free. Circle it, wear it down, and collect the drop without taking the hit.</li>
+                        <li>Ranged enemies reach three tiles, so a slow kite will get you shot. Close the gap in two steps and hold that distance.</li>
+                        <li>Pull one enemy out of a room at a time. Two monsters in melee is where runs actually end.</li>
+                        <li>Retreat through a doorway. Doorways buy you a turn of safety that open floor does not.</li>
+                    </ul>
+                </div>
+                <div class="bg-dungeonLight p-6 pixel-border">
+                    <h3 class="text-lg font-bold text-neonPurple mb-4">Resource Rules in a Fight</h3>
+                    <ul class="text-gray-300 text-xs space-y-3">
+                        <li>Do not spend a healing item below 50% HP. Save it for the mistake you have not made yet.</li>
+                        <li>Do not spend a burst ability on trash. The mini-boss every ten floors is where it pays.</li>
+                        <li>Armor reduces every hit you take, so a single strong enemy is a toughness problem and a swarm is a kill-speed problem.</li>
+                        <li>If you are below 30% HP, the correct action is to leave, not to try one more room.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Boss Checklist -->
+        <section class="mb-16">
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Boss Preparation Checklist</h2>
+            <div class="bg-dungeonLight p-6 pixel-border">
+                <div class="space-y-4 text-xs">
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonGreen text-dungeon px-3 py-1 font-bold min-w-[100px] text-center">Before</span>
+                        <p class="text-gray-300">Clear the side rooms of the boss floor first. Mini-bosses are stronger with the floor left unclean.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonGreen text-dungeon px-3 py-1 font-bold min-w-[100px] text-center">Health</span>
+                        <p class="text-gray-300">Enter above 80% HP with at least one healing item unused and a full mana bar.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonPurple text-white px-3 py-1 font-bold min-w-[100px] text-center">Gear</span>
+                        <p class="text-gray-300">Equip your best stats, not your best item. A Common with good HP can beat an Epic with useless bonuses.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-neonPurple text-white px-3 py-1 font-bold min-w-[100px] text-center">Bank</span>
+                        <p class="text-gray-300">Have enough gold banked to buy your next upgrade before you walk in. A boss kill should fund the run after it.</p>
+                    </div>
+                    <div class="flex flex-col md:flex-row gap-4 items-start md:items-center">
+                        <span class="bg-gray-500 text-white px-3 py-1 font-bold min-w-[100px] text-center">Exit</span>
+                        <p class="text-gray-300">Know the boss room entrance. If the fight is lost, restart at the bank.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Death Post-Mortem -->
+        <section>
+            <h2 class="text-xl md:text-2xl font-bold text-neonPurple mb-6 border-b-2 border-neonPurple/50 pb-2">Death Post-Mortem</h2>
+            <div class="bg-dungeonLight p-6 pixel-border">
+                <p class="text-gray-400 text-xs md:text-sm leading-relaxed mb-6">
+                    Most players treat a death as a lost run. Treat it as a diagnosis. After each death, write down three things: the floor you died on, the enemy that killed you, and your health when the fight started. Patterns emerge within a dozen runs.
+                </p>
+                <div class="grid md:grid-cols-2 gap-6 text-xs">
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg">✗</span>
+                            <p class="text-gray-300">"Died to a floor 12 enemy again" - the fix is health, and probably Toughness</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-red-500 text-lg">✗</span>
+                            <p class="text-gray-300">"Died at full health to a swarm" - the fix is attack speed, not armor</p>
+                        </div>
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-start gap-3">
+                            <span class="text-neonGreen text-lg">✓</span>
+                            <p class="text-gray-300">"Died at 30% HP" - the fix is routing, because you should never have entered that room</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-neonGreen text-lg">✓</span>
+                            <p class="text-gray-300">"Died to a boss" - the fix is the checklist above, not more grinding</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Adsterra Ads -->
+    <script async="async" data-cfasync="false" src="https://bauval.org/21/330d36ae71eb442bbcc6ce59f1b620a6"></script>
+    <div id="container-330d36ae71eb442bbcc6ce59f1b620a6"></div>
+
+    <script data-cfasync="false" src="https://bauval.org/14/a3c5da0977fc52db8162edba78da0dc8"></script>
+
+    <script>
+      atOptions = {
+        'key' : '9be09c49ef205bdebda74393ec15512b',
+        'format' : 'iframe',
+        'height' : 250,
+        'width' : 300,
+        'params' : {}
+      };
+    </script>
+    <script src="https://bauval.org/22/9be09c49ef205bdebda74393ec15512b"></script>
+
+    <!-- Footer -->
+    <footer class="bg-dungeonLight border-t-2 border-neonPurple/50 mt-16">
+        <div class="container mx-auto px-4 py-8 text-center">
+            <p class="text-gray-500 text-xs">Loop Dungeon Incremental Wiki - Fan-made guide</p>
+            <p class="text-gray-600 text-xs mt-2">Not affiliated with the game developers</p>
+        </div>
+
+    <!-- Related Articles -->
+    <section class="max-w-4xl mx-auto py-8 px-4 border-t border-amber-900">
+        <h3 class="text-xl font-bold mb-4 text-white">You Might Also Like</h3>
+        <div class="grid md:grid-cols-3 gap-4">
+        <a href="index.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Loop Dungeon Incremental - Game Wiki</span>
+        </a>
+        <a href="mechanics.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Game Mechanics - Loop Dungeon Incremental Wiki</span>
+        </a>
+        <a href="progression-guide.html" class="block p-4 bg-amber-900/30 border-amber-900 rounded hover:bg-amber-800/30 transition">
+            <span class="font-semibold text-gray-300">→ Progression Guide - Loop Dungeon Incremental Wiki</span>
+        </a>
+        </div>
+    </section>
+</footer>
+</body>
+</html>
