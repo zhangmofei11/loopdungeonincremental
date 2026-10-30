@@ -49,6 +49,22 @@
         .pixel-border { box-shadow: 0 0 10px #9933ff, inset 0 0 10px rgba(153, 51, 255, 0.3); }
         .neon-glow { text-shadow: 0 0 5px #00ff88, 0 0 10px #00ff88; }
     </style>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/favicon.png">
+    <meta name="theme-color" content="#0a0a0f">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Loop Dungeon Incremental Wiki">
+    <meta property="og:title" content="Upgrade Guide - Loop Dungeon Incremental Wiki">
+    <meta property="og:description" content="Optimize your Loop Dungeon Incremental builds with the best upgrade paths. Warrior, Ranger, and Mage trees ranked with priority guide for all game stages.">
+    <meta property="og:url" content="https://loopdungeonincremental.site/upgrades.html">
+    <meta property="og:image" content="https://loopdungeonincremental.site/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Loop Dungeon Incremental Wiki">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Upgrade Guide - Loop Dungeon Incremental Wiki">
+    <meta name="twitter:description" content="Optimize your Loop Dungeon Incremental builds with the best upgrade paths. Warrior, Ranger, and Mage trees ranked with priority guide for all game stages.">
+    <meta name="twitter:image" content="https://loopdungeonincremental.site/og-image.png">
 </head>
 <body class="min-h-screen text-gray-200">
     <!-- Navigation -->
@@ -56,7 +72,7 @@
         <div class="container mx-auto px-4 py-4">
             <div class="flex flex-wrap items-center justify-between">
                 <a href="index.html" class="text-xl font-bold text-neonGreen neon-glow mb-2 md:mb-0">Loop Dungeon</a>
-                <div class="flex flex-wrap gap-4 md:gap-8">
+                <div class="hidden flex-wrap gap-4 md:gap-8 lg:flex">
                     <a href="index.html" class="text-gray-400 hover:text-neonPurple transition">Home</a>
                     <a href="mechanics.html" class="text-gray-400 hover:text-neonPurple transition">Mechanics</a>
                     <a href="walkthrough.html" class="text-gray-400 hover:text-neonPurple transition">Walkthrough</a>
@@ -64,7 +80,24 @@
                     <a href="tips.html" class="text-gray-400 hover:text-neonPurple transition">Tips</a>
                     <a href="progression-guide.html" class="text-gray-400 hover:text-neonPurple transition">Progression</a>
                 </div>
+                            <button id="mobile-menu-btn" class="lg:hidden p-2 -mr-2 rounded-lg transition-all" style="color:#d1d5db" aria-label="Menu" aria-expanded="false" aria-controls="mobile-menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+                </button></div>        <div id="mobile-menu" class="hidden lg:hidden fixed inset-0 z-[9999] overflow-y-auto" style="background-color:rgba(8,8,12,0.98)">
+            <div class="flex items-center justify-between px-4 py-4" style="border-bottom:1px solid rgba(255,255,255,0.08)">
+                <span style="color:#9ca3af;font-size:13px;letter-spacing:0.08em;text-transform:uppercase">Menu</span>
+                <button id="mobile-menu-close" class="p-2 -mr-2 rounded-lg transition-all" style="color:#d1d5db" aria-label="Close menu">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg>
+                </button>
             </div>
+            <div class="px-4 py-3 space-y-1">
+                <a href="index.html" class="block px-4 py-3 rounded-lg transition-all" style="color:#d1d5db">Home</a>
+                <a href="mechanics.html" class="block px-4 py-3 rounded-lg transition-all" style="color:#d1d5db">Mechanics</a>
+                <a href="walkthrough.html" class="block px-4 py-3 rounded-lg transition-all" style="color:#d1d5db">Walkthrough</a>
+                <a href="upgrades.html" class="block px-4 py-3 rounded-lg transition-all font-bold" style="color:#fff;background-color:rgba(255,255,255,0.08)">Upgrades</a>
+                <a href="tips.html" class="block px-4 py-3 rounded-lg transition-all" style="color:#d1d5db">Tips</a>
+                <a href="progression-guide.html" class="block px-4 py-3 rounded-lg transition-all" style="color:#d1d5db">Progression</a>
+            </div>
+        </div>
         </div>
     </nav>
 
@@ -380,5 +413,23 @@
         </div>
     </section>
 </footer>
+    <script>
+    (function () {
+      var btn = document.getElementById('mobile-menu-btn');
+      var menu = document.getElementById('mobile-menu');
+      var close = document.getElementById('mobile-menu-close');
+      if (!btn || !menu) return;
+      function setOpen(open) {
+        menu.classList.toggle('hidden', !open);
+        btn.setAttribute('aria-expanded', String(open));
+        document.body.style.overflow = open ? 'hidden' : '';
+      }
+      btn.addEventListener('click', function () { setOpen(menu.classList.contains('hidden')); });
+      if (close) close.addEventListener('click', function () { setOpen(false); });
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && !menu.classList.contains('hidden')) setOpen(false);
+      });
+    })();
+    </script>
 </body>
 </html>
